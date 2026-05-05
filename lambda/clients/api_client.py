@@ -24,12 +24,18 @@ def resolve_via_api(event: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     # En un escenario real, obtenemos esto desde las variables de entorno (ya inyectado de SecretsManager)
     api_key = os.getenv("LLM_API_KEY", "dummy")
     
-    # Simulando la lógica de llamada a la API externa
+    # Simulando la lógica de llamada a la API externa (OpenAI)
     # try:
     #     response = requests.post(
-    #         "https://api.anthropic.com/v1/messages", 
-    #         headers={"x-api-key": api_key},
-    #         json={"model": "claude-3-haiku", "messages": [...]},
+    #         "https://api.openai.com/v1/chat/completions", 
+    #         headers={
+    #             "Authorization": f"Bearer {api_key}",
+    #             "Content-Type": "application/json"
+    #         },
+    #         json={
+    #             "model": "gpt-4o-mini", # O gpt-3.5-turbo
+    #             "messages": [{"role": "user", "content": "Analiza esta alarma..."}]
+    #         },
     #         timeout=timeout_seconds
     #     )
     #     response.raise_for_status()
