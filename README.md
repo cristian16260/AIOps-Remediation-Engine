@@ -14,7 +14,7 @@ Un motor de remediación autónoma desplegado 100% con Terraform. Utiliza un pat
 - **Terraform** (`>= 1.5.0`)
 - **Python** (`>= 3.9`) para la instalación local de librerías.
 - Credenciales de AWS configuradas en tu terminal (`aws configure`).
-- Haber creado el archivo `terraform.tfvars` a partir de tus IDs reales de VPC y Subredes.
+- Haber creado el archivo `terraform.tfvars` con tus IDs reales de VPC, Subredes y tu **API Key de OpenAI** (`llm_api_key`).
 
 ## Instrucciones de Despliegue Local
 
